@@ -48,14 +48,11 @@ function GridLayout(props) {
 
   return (
     <div>
-      <Typography variant="subtitle1" gutterBottom>
-        Material-UI Grid:
-      </Typography>
       <Grid container spacing={24}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(function(elem) {
           return (
             <Grid item xs={6} sm={4} md={3} lg={2}>
-              <SimpleMediaCard />
+              <SimpleMediaCard title="Bubbles" detail="" buttons="" />
             </Grid>
           );
         })}
