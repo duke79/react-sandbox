@@ -13,12 +13,13 @@ const App = class App extends React.Component {
 
   render() {
     // store.increment();
-    let count = this.props.store.count;
+    // let store = this.props.store;
 
     return (
       <div className="App">
-        <h1>Hello Hippies {count}</h1>
+        <h1>Hello Hippies {store.count}</h1>
         <SimpleMediaCard />
+        <button onClick={() => store.increment()}>Increment</button>
       </div>
     );
   }
@@ -26,4 +27,4 @@ const App = class App extends React.Component {
 const AppO = observer(App);
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<AppO store={store} />, rootElement);
+ReactDOM.render(<AppO />, rootElement);
