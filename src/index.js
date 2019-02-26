@@ -6,19 +6,24 @@ import { observer } from "mobx-react";
 import { observable } from "mobx";
 import store from "./store";
 
-class App extends React.Component {
+const App = class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     // store.increment();
+    let count = this.props.store.count;
 
     return (
       <div className="App">
-        <h1>Hello Hippies {store.count}</h1>
+        <h1>Hello Hippies {count}</h1>
         <SimpleMediaCard />
       </div>
     );
   }
-}
+};
 const AppO = observer(App);
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<AppO />, rootElement);
+ReactDOM.render(<AppO store={store} />, rootElement);
