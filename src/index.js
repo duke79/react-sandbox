@@ -18,10 +18,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>
-          Hello Hippies {store.count} {store.rount}
+          {store.page}{" "}
+          {store.top_rated_movies ? store.top_rated_movies[0].title : null}
         </h1>
         <SimpleMediaCard />
-        <button onClick={() => store.increment()}>Increment</button>
+        <button onClick={() => store.set_page(store.page + 1)}>
+          Increment
+        </button>
       </div>
     );
   }
