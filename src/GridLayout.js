@@ -49,10 +49,10 @@ function GridLayout(props) {
   return (
     <div>
       <Grid container spacing={24}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(function(elem) {
+        {props.elems.map(function(elem) {
           return (
             <Grid item xs={6} sm={4} md={3} lg={2}>
-              <SimpleMediaCard title="Bubbles" detail="" buttons="" />
+              <SimpleMediaCard title={elem} detail="" buttons="" />
             </Grid>
           );
         })}
@@ -65,7 +65,9 @@ GridLayout.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-GridLayout.defaultProps = {};
+GridLayout.defaultProps = {
+  elems: [0, 1, 2, 3]
+};
 
 const StyledGridLayout = styled(GridLayout)``;
 // export default withStyles(styles)(GridLayout);
