@@ -49,13 +49,11 @@ S.MovieTitle = styled(MovieTitle)`
 
 S.YTPlayer = styled(YTPlayer)`
   && {
-    // height: 0;
-    // padding-top: 56.25%; // 16:9
-    // padding-top: 200px;
-    // max-height: 600px;
     padding: 0;
     width: 100%;
-    height: 200px;
+    max-width: 400px;
+    height: 250px;
+    margin: auto;
   }
 `;
 
