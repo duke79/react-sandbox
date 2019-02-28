@@ -64,6 +64,73 @@ S.Divider = styled(Divider)`
   }
 `;
 
+function Overview(props) {
+  return (
+    <S.Card {...props}>
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h2">
+          Overview
+        </Typography>
+        <Typography gutterBottom variant="p">
+          This movie centers around teen hero Kim Possible and friends as they
+          try to balance high school with saving the world everyday.
+        </Typography>
+      </CardContent>
+    </S.Card>
+  );
+}
+
+function Ratings(props) {
+  return (
+    <Typography gutterBottom variant="h5" noWrap {...props}>
+      7.4
+    </Typography>
+  );
+}
+
+S.Ratings = styled(Ratings)`
+  align-self: flex-end;
+  font-family: Srisakdi;
+  // border-bottom: #0000002b solid 1px;
+  color: blue;
+`;
+
+function Genres(props) {
+  return (
+    <Typography gutterBottom variant="p" noWrap {...props}>
+      Action, Thriller, Science Fiction
+    </Typography>
+  );
+}
+
+S.Genres = styled(Genres)`
+  padding-left: 30px;
+  align-self: flex-end;
+  padding-bottom: 10px;
+  font-family: Monospace;
+`;
+
+function Stats(props) {
+  return (
+    <S.Card {...props}>
+      <CardContent>
+        <S.Ratings />
+        <S.Genres />
+      </CardContent>
+    </S.Card>
+  );
+}
+
+S.Stats = styled(Stats)`
+  && > div {
+    padding-bottom: 0;
+    display: flex;
+    padding-left: 30px;
+    // align-items: center;
+    // justify-content: center;
+  }
+`;
+
 function PageLayout(props) {
   return (
     <div {...props}>
@@ -73,27 +140,9 @@ function PageLayout(props) {
         </S.YTPlayer>
         <S.MovieTitle />
         <S.Divider />
-        <S.Card>
-          <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              Overview
-            </Typography>
-            <Typography gutterBottom variant="p">
-              This movie centers around teen hero Kim Possible and friends as
-              they try to balance high school with saving the world everyday.
-            </Typography>
-          </CardContent>
-        </S.Card>
+        <S.Stats />
         <S.Divider />
-        <S.Card>
-          <CardContent>
-            <Typography gutterBottom variant="p">
-              This movie centers around teen hero Kim Possible and friends as
-              they try to balance high school with saving the world everyday.
-            </Typography>
-          </CardContent>
-        </S.Card>
-        <S.Divider />
+        <Overview />
       </Grid>
     </div>
   );
