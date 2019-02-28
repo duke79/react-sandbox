@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import YTPlayer from "./YTPlayer";
 import Divider from "@material-ui/core/Divider";
+import { unstable_Box as Box } from "@material-ui/core/Box";
 
 let S = {};
 
@@ -28,13 +29,34 @@ const TitleBlockS = styled(TitleBlock)`
 
 S.Card = styled(Card)``;
 
+function MovieTitle(props) {
+  return (
+    <S.Card {...props}>
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h2">
+          <Box textAlign="center">Cat Falling</Box>
+        </Typography>
+      </CardContent>
+    </S.Card>
+  );
+}
+
+S.MovieTitle = styled(MovieTitle)`
+  && > div {
+    padding-bottom: 0;
+  }
+`;
+
 S.YTPlayer = styled(YTPlayer)`
-  height: 0;
-  // padding-top: 56.25%; // 16:9
-  // padding-top: 200px;
-  // max-height: 600px;
-  width: 100%;
-  height: 200px;
+  && {
+    // height: 0;
+    // padding-top: 56.25%; // 16:9
+    // padding-top: 200px;
+    // max-height: 600px;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+  }
 `;
 
 S.Divider = styled(Divider)`
@@ -48,16 +70,10 @@ function PageLayout(props) {
   return (
     <div {...props}>
       <Grid container spacing={16} justify={"flex-start"} direction="column">
-        <S.Card>
-          <S.YTPlayer>
-            <S.YTPlayer />
-          </S.YTPlayer>
-          <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              This is my video
-            </Typography>
-          </CardContent>
-        </S.Card>
+        <S.YTPlayer>
+          <S.YTPlayer />
+        </S.YTPlayer>
+        <S.MovieTitle />
         <S.Divider />
         <S.Card>
           <CardContent>

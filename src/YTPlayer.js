@@ -23,7 +23,7 @@ const YoutubeWrapper = styled.div`
 class YTPlayer extends React.Component {
   render() {
     return (
-      <YoutubeWrapper>
+      <YoutubeWrapper {...this.props}>
         <YouTube {...this.props} />
       </YoutubeWrapper>
     );
